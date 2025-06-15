@@ -52,7 +52,9 @@ Meme/<div>
 
    
 ## 📷 Example
-![image](https://github.com/user-attachments/assets/7f73a3ce-05b6-4827-b5cb-553b46c75531)
+
+![image](https://github.com/user-attachments/assets/0ed8f635-3f54-4879-9fa1-9259218094a5)
+![image](https://github.com/user-attachments/assets/51d8e34e-920c-4e50-8c46-94666fb7e7f2)
 
 🧠 Model Used
 

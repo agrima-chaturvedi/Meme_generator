@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Meme Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e1f26, #323946);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        form {
+            background-color: #2f3640;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            background-color: #dcdde1;
+            color: #2f3640;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #00cec9;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #00b894;
+        }
+
+        .result {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .caption {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #dff9fb;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .download-btn button {
+            background: #0984e3;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn button:hover {
+            background: #74b9ff;
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            input[type="text"], button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🤖 AI Meme Generator</h1>
+    <form method="POST">
+        <input type="text" name="idea" placeholder="Enter your meme idea..." required />
+        <br>
+        <button type="submit">✨ Generate Meme</button>
+    </form>
+
+    <div class="result">
+        {% if caption %}
+            <div class="caption">📝 <strong>Caption:</strong> {{ caption }}</div>
+        {% endif %}
+
+        {% if meme_url %}
+            <img src="{{ meme_url }}" alt="Generated Meme">
+            <br>
+            <a class="download-btn" href="{{ meme_url }}" download="generated_meme.png">
+                <button type="button">⬇️ Download Meme</button>
+            </a>
+        {% endif %}
+    </div>
+</body>
+</html>
